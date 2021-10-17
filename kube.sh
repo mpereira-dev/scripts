@@ -1,6 +1,8 @@
 #!/bin/bash
 # Generic Kubernetes
 
+alias kubectl-context="kubectl config current-context"
+
 # Get the pod name matching the given expression.
 function kubectl-pod {
   local POD_NAME=$1
@@ -20,6 +22,7 @@ function kubectl-pod-port {
 }
 
 # Forward a local port to a port on the service.
+# https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/
 function kubectl-port-forward {
   local SERVICE_NAME=$1
   local PORT_NUMBER=$2
