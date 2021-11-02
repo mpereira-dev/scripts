@@ -1,7 +1,10 @@
 #!/bin/bash
+# Getting Started: https://birthday.play-with-docker.com/kubernetes-docker-desktop/
 # Generic Kubernetes
 
 alias kubectl-context="kubectl config current-context"
+# Thie enables accessing services via localhost & http.
+alias kubectl-proxy="kubectl proxy"
 
 # Get the pod name matching the given expression.
 function kubectl-pod {
@@ -33,4 +36,11 @@ function kubectl-port-forward {
 function kubectl-ssh {
   local POD_NAME=$1
   kubectl exec --stdin --tty $(kubectl-pod $POD_NAME) -- /bin/sh
+}
+
+# Get a bearer token for the Kubernetes dashboard
+function kubectl-bearer {
+  printf "\n"
+  kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+  printf "\n\n"
 }

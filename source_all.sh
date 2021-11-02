@@ -7,6 +7,9 @@
 export SCRIPTS_HOME="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 export PATH=$PATH:"$SCRIPTS_HOME"
 
+# Launch VSCode for this directory.
+alias scripts="code $SCRIPTS_HOME"
+
 # Source each .sh script in this dirctory or ./apps.
 function source_all {
   # Generic
