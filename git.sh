@@ -12,3 +12,9 @@ alias gaddall="git add -A; git status;";
 function gsquash(){
   git reset --soft HEAD~$1
 }
+
+# Open the user .gitconfig file for editing.
+function gitconfig (){
+  echo "Opening: ~/.gitconfig";
+  vim ~/.gitconfig;
+}
