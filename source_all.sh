@@ -16,6 +16,10 @@ function source_all {
   for SCRIPT in $(ls $SCRIPTS_HOME | grep sh); do
     source $SCRIPTS_HOME/$SCRIPT
   done
+  # Client specific
+  for SCRIPT in $(ls $SCRIPTS_HOME/clients | grep sh); do
+    source $SCRIPTS_HOME/clients/$SCRIPT
+  done
   # App specific
   for SCRIPT in $(ls $SCRIPTS_HOME/apps | grep sh); do
     source $SCRIPTS_HOME/apps/$SCRIPT
