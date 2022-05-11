@@ -7,13 +7,34 @@ alias docker-down-v="docker-compose down -v"
 alias docker-down-rmi="docker-compose down --rmi"
 
 # Open an terminal session to the container with sh.
+function docker-exec(){
+  local CONTAINER_NAME=$1;
+  local COMMAND=$2;
+  docker exec -it $(docker container ls | grep $CONTAINER_NAME | cut -d' ' -f1) $COMMAND;
+}
+
+# Open an terminal session to the container with sh.
 function docker-attach(){
-  docker exec -it $1 /bin/sh;
+  local CONTAINER_NAME=$1;
+  docker-exec $CONTAINER_NAME /bin/sh;
+}
+
+# Open an terminal session to the container with sh.
+function docker-attach-2(){
+  local CONTAINER_ID=$1;
+  docker exec -it $CONTAINER_ID /bin/sh;
 }
 
 # Open an terminal session to the container with bash.
 function docker-bash(){
-  docker exec -it $1 /bin/bash;
+  local CONTAINER_NAME=$1;
+  docker-exec $CONTAINER_NAME /bin/bash;
+}
+
+# Open an terminal session to the container with bash.
+function docker-bash-2(){
+  local CONTAINER_ID=$1;
+  docker exec -it $CONTAINER_ID /bin/bash;
 }
 
 # Tail the logs of a specific container
