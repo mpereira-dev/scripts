@@ -18,3 +18,9 @@ function gitconfig (){
   echo "Opening: ~/.gitconfig";
   vim ~/.gitconfig;
 }
+
+# Delete all branches except master and develop.
+# Make sure all other branches you want have already been merged into develop.
+function gitcleanup() {
+  git branch | egrep -v "(^\*|master|develop)" | xargs git branch -D
+}
