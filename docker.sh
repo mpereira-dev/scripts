@@ -6,7 +6,7 @@ alias docker-prune="docker container prune"
 alias docker-down-v="docker-compose down -v"
 alias docker-down-rmi="docker-compose down --rmi"
 
-# Open an terminal session to the container with sh.
+# Run the given command on the specified container.
 function docker-exec(){
   local CONTAINER_NAME=$1;
   local COMMAND=$2;
