@@ -24,3 +24,9 @@ function git-config (){
 function git-cleanup() {
   git branch | egrep -v "(^\*|master|develop)" | xargs git branch -D
 }
+
+# Delete the specified branch on the remote.
+function git-delete-remote() {
+  local BRANCH_NAME=$1
+  git push origin --delete $BRANCH_NAME --no-verify
+}

@@ -20,7 +20,7 @@ function docker-attach(){
 }
 
 # Open an terminal session to the container with sh.
-function docker-attach-2(){
+function docker-attach-id(){
   local CONTAINER_ID=$1;
   docker exec -it $CONTAINER_ID /bin/sh;
 }
@@ -32,7 +32,7 @@ function docker-bash(){
 }
 
 # Open an terminal session to the container with bash.
-function docker-bash-2(){
+function docker-bash-id(){
   local CONTAINER_ID=$1;
   docker exec -it $CONTAINER_ID /bin/bash;
 }
