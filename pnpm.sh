@@ -4,7 +4,7 @@
 
 # Setup PNPM on the PATH
 # Assumption: PNPM was installed via install.sh not homebrew.
-export PNPM_HOME="/Users/wind/Library/pnpm"
+export PNPM_HOME="/Users/$(whoami)/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
