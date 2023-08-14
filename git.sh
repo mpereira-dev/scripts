@@ -19,10 +19,10 @@ function git-config (){
   vim ~/.gitconfig;
 }
 
-# Delete all branches except master and develop.
+# Delete all branches except master, main, and develop.
 # Make sure all other branches you want have already been merged into develop.
 function git-cleanup() {
-  git branch | egrep -v "(^\*|master|develop)" | xargs git branch -D
+  git branch | egrep -v "(^\*|master|develop|main)" | xargs git branch -D
 }
 
 # Delete the specified branch on the remote.
