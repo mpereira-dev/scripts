@@ -2,7 +2,7 @@
 export PATH="/Users/$(whoami)/.jenv/bin:$PATH"
 
 # jenv, direnv, shellenv
-if [[ $(uname -m) == 'arm' ]]; then
+if [[ $(uname -m) == 'arm64' ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   eval "$(/opt/homebrew/bin/direnv hook bash)"
   eval "$(/opt/homebrew/bin/jenv init -)"
