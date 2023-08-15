@@ -9,6 +9,7 @@ export PATH=$PATH:"$SCRIPTS_HOME"
 
 # Launch VSCode for this directory.
 alias scripts="code $SCRIPTS_HOME"
+alias scripts-home="cd $SCRIPTS_HOME"
 
 # Source each .sh script in this dirctory or ./apps.
 function source_all {
