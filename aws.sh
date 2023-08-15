@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Open up the ~/.aws folder in VSCode.
+alias aws-config="cd ~/.aws; code ."
+
 # Get account information for the current user.
 function aws-whoami {
     aws sts get-caller-identity | jq
